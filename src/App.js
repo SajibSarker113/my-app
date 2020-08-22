@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -15,6 +15,7 @@ const products = [
     <div className="App">
       <header className="App-header">
       <p>I am a react person</p>
+      <Counter></Counter>
       <ul>
         {
           nayoks.map(x => <li>{x}</li>)
@@ -30,6 +31,17 @@ const products = [
       </header>
     </div>
   );
+}
+
+function Counter(){
+  const [count, setCount] = useState(0);
+  return(
+    <div>
+      <h1>Count: {count} </h1>
+      <button onClick={() => setCount(count - 1) }>Decrease</button>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  )
 }
 
 function Product(props){
