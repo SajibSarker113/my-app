@@ -3,21 +3,30 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const nayoks =['Razzak', 'Jafor iqbal', 'Josim', 'Manna', 'Salman Shah','Boby']
 const products = [
   {name: 'Photoshop', price:'$90.99'},
   {name: 'Illstrator', price:'$60.99'},
-  {name: 'PDF Reader', price:'$40.99'}
+  {name: 'PDF Reader', price:'$40.99'},
+  {name: 'PDF Extra', price:'$40.99'}
 ]
+
   return (
     <div className="App">
       <header className="App-header">
       <p>I am a react person</p>
+      <ul>
+        {
+          nayoks.map(x => <li>{x}</li>)
+        }
+        {
+          products.map(product => <li>{product.name}</li>)
+        }
+      </ul>
+      {products.map(pd => <Product product={pd}></Product>)}
       <Product product={products[0]}></Product>
       <Product product={products[1]}></Product>
       <Product product={products[2]}></Product>
-      <Person name="Munna" job="Footballer"></Person>
-      <Person name="Sajib" job="Viewer"></Person>
-
       </header>
     </div>
   );
